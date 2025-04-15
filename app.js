@@ -34,7 +34,7 @@ let servicios = [
 ]
 
 // FUNCIONES 
-const seteoDeVariables = () => {
+const seteoDeVariables = () => { // Setea las variables que afectan el flujo del codigo para que inicie de forma correcta.
     valorTotal = 0;
     numeroDeServicioCorrecto = false;
     seguirComprando = true;
@@ -54,7 +54,7 @@ const seleccionarServicio = () => { // Crea un mensaje con la lista de servicios
     }
     numeroDeServicio = parseInt(prompt(listaServicios))-1;
 }
-const verificacionDeSeleccion = (valor) => {
+const verificacionDeSeleccion = (valor) => { // Verifica si el valor ingresado esta dentro de las opciones dadas.
     if (valor >= 0 && valor < servicios.length) {
         return true;
     }else{
