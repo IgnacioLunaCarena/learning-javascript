@@ -34,6 +34,7 @@ let servicios = [
 ]
 
 // FUNCIONES 
+
 const seteoDeVariables = () => { // Setea las variables que afectan el flujo del codigo para que inicie de forma correcta.
     valorTotal = 0;
     numeroDeServicioCorrecto = false;
@@ -66,6 +67,7 @@ const agregarValorDeServicio = (valorDeServicio) => { // Va guardando el valor t
 }
 
 // COMIENZO DE SIMULADOR
+
 while (ingreso) {
     seteoDeVariables();
     alert ("Bienvenido a la barberia de Reveck");
