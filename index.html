@@ -1,12 +1,66 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>💈 Reveck's Barbershop</title>
+    <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="src/output.css">
 </head>
-<body>
-    <h1>BARBERIA REVECK'S</h1>
-    <script src="app.js"></script>
+<body class="bg-gray-700 text-gray-300 min-h-screen flex flex-col justify-center items-center">
+    <div class="bg-gray-800 rounded-2xl shadow-2xl p-4 flex flex-col justify-center items-center w-md gap-2">
+        <h1 class="text-3xl font-bold">Reveck's Barbershop</h1>
+        <div id="loginSection" class="w-3xs flex flex-col justify-center items-center gap-2 pt-5">
+            <input id="email" type="text" placeholder="Ingrese su correo" class="p-1 w-full bg-gray-600">
+            <input id="password" type="password" placeholder="Ingrese su contraseña" class="p-1 w-full bg-gray-600 border-0 border-black">
+            <p id="loginText" class="opacity-0">-</p>
+            <div class="w-full flex flex-row justify-around">
+                <button id="loginBtn" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">Iniciar sesión</button>
+                <button id="toRegisterBtn" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">A registrarse</button>
+            </div>
+        </div>
+        <div id="registerSection" class="w-3xs flex flex-col justify-center items-center gap-2 pt-5 hidden">
+            <input id="newEmail" type="text" placeholder="Ingrese su correo" class="p-1 w-full bg-gray-600">
+            <input id="newUsername" type="text" placeholder="Ingrese su nombre" class="p-1 w-full bg-gray-600">
+            <input id="newPassword" type="password" placeholder="Ingrese su contraseña" class="p-1 w-full bg-gray-600">
+            <input id="repeatNewPassword" type="password" placeholder="Ingrese nuevamente su contraseña" class="p-1 w-full bg-gray-600">
+            <p id="registerText" class="opacity-0">-</p>
+            <div class="w-full flex flex-row justify-around">
+                <button id="registerBtn" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">Registrarse</button>
+                <button id="toLoginBtn" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">Volver</button>
+            </div>
+        </div>
+        <div id="loggedSection" class="w-2xs flex flex-col justify-center items-center gap-3 p-2 hidden">
+            <p id="welcomeText">Bienvenido (nombre de usuario)</p>
+            <div class="flex flex-col justify-center items-center gap-3 w-2/3">
+                <p class="w-full text-start">Para reservar turno:</p>
+                <form id="reserveForm" class="flex flex-col gap-2">
+                    <input id="dateSelector" type="text" placeholder="Elegí la fecha" class="w-full bg-gray-700"/>
+                    <input id="hourSelector" type="text" placeholder="Elegí la hora" class="w-full bg-gray-700"/>
+                    <div class="flex flex-row">
+                        <select id="serviceSelector">
+                            <option value="">Seleccioná un servicio</option>
+                            <option value="corte">Corte</option>
+                            <option value="tenido">Teñido</option>
+                            <option value="barba">Barba</option>    
+                        </select>
+                    </div>
+                    <div class="flex flex-row">
+                        <select id="barberSelector">
+                            <option value="">Seleccioná el barbero</option>
+                            <option value="corte">Jorge</option>
+                            <option value="tenido">Luciano</option>
+                            <option value="barba">Ignacio</option>    
+                        </select>
+                    </div>
+                    <p id="loggedText" class="opacity-0">---</p>
+                    <button type="submit" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">Reservar turno</button>
+                    <button id="logOffBtn" class="bg-gray-900 hover:bg-gray-950 p-2 pl-3 pr-3 rounded-3xl hover:cursor-pointer">Cerrar sesión</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="main.js"></script>
 </body>
 </html>
