@@ -123,8 +123,9 @@ registerBtn.addEventListener("click", ()=>{
   } 
   
   let foundUser = usersSaved.find(user => user.email.toUpperCase() === newEmail.toUpperCase());
-
+  console.log(foundUser);
   if (foundUser !== undefined){
+    console.log(foundUser);
     registerText.classList.remove("opacity-0");
     registerText.textContent = "Ese correo ya se encuentra registrado";
     return;
@@ -139,6 +140,7 @@ registerBtn.addEventListener("click", ()=>{
     {email: newEmail, username: newUsername, password: newPassword}
   );
   localStorage.setItem("users", JSON.stringify(usersSaved));
+  registerText.classList.remove("opacity-0");
   registerText.textContent = "Usuario creado";
 });
 toLoginBtn.addEventListener("click", ()=>{
